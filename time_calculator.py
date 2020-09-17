@@ -8,30 +8,28 @@ duration = []
 times = []
 per = ''
 mil = ''
-def add_time(start, duration, day = None):
-    #break apart inputs
+
+
+def add_time(start, duration, day=None):
+    # break apart inputs
     start = start.split()
     per = start[1]
-    times = str(start[0]).replace(':','')
+    mil = ''
+    times = str(start[0]).replace(':', '')
     if len(times) < 4:
         times = times.zfill(len(times) + 1)
     if 'P' in per:
-        mil
-    #duration = duration.split(':')
-    
+        mil = int(times) + 1200
+    duration = duration.replace(':', '')
 
+    # convert to 24 hour time
+    if len(times) < 4:
+        times = times.zfill(len(times) + 1)
+    if 'P' in per:
+        mil = int(times) + 1200
+    # shour = int(shour) + 12
 
-    #convert to 24 hour time
-    #shour = int(shour) + 12
+    # add duration
+    # new_time = shour + int(dhour)
 
-    #add duration
-    #new_time = shour + int(dhour)
-
-
-
-    new_time = print(per) 
-
-
-
-
-    return new_time
+    new_time = print(duration)
